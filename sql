@@ -8,3 +8,7 @@
 -- keywords to google: translate, initcap, replace, regex_replace
 -- also play around with the examples here: 
 -- https://stackoverflow.com/questions/4428645/postgres-regexp-replace-want-to-allow-only-a-z-and-a-z
+
+
+select product_name, substring(regexp_replace(product_name, '[^a-zA-Z]', '', 'g'),1,11) as label 
+from products;
